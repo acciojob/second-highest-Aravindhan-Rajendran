@@ -8,10 +8,10 @@
 
 <body>	
 	<script>
-function secondHighest(arr) {
-    // If array length is less than 2, return undefined
+		function secondHighest(arr) {
+    // If array length is less than 2, return -Infinity
     if (arr.length < 2) {
-        return undefined;
+        return -Infinity;
     }
 
     // Check if all elements are the same
@@ -35,7 +35,6 @@ function secondHighest(arr) {
 
     return second;
 }
-
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
