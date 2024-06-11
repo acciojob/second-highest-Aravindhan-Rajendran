@@ -9,7 +9,12 @@
 <body>	
 	<script>
 		var key=arr[0];
-		function secondHighest(arr) {
+function secondHighest(arr) {
+    // If array length is less than 2, return undefined
+    if (arr.length < 2) {
+        return undefined;
+    }
+
     var first = -Infinity;
     var second = -Infinity;
 
@@ -23,10 +28,13 @@
         }
     }
 
+    // If second is still -Infinity, that means all elements were the same, so return undefined
+    if (second === -Infinity) {
+        return undefined;
+    }
+
     return second;
-
-
-		}
+}
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
