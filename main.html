@@ -9,15 +9,9 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-    // If array length is less than 2, return -Infinity
-if (arr.length === 1) {
-    return -Infinity;
-}
-
-    // Check if all elements are the same
-    var allSame = arr.every(val => val === arr[0]);
-    if (allSame) {
-        return arr[0]; // return the element itself
+    // Check if the array is empty, has one element, or all elements are the same
+    if (arr.length === 0 || arr.length === 1 || new Set(arr).size === 1) {
+        return -Infinity;
     }
 
     var first = -Infinity;
