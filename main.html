@@ -8,9 +8,24 @@
 
 <body>	
 	<script>
+		var key=arr[0];
 		function secondHighest(arr) {
-			//Write your code here
-			
+    var first = -Infinity;
+    var second = -Infinity;
+
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i] > second) {
+            second = arr[i];
+        }
+    }
+
+    return second;
+
+
 		}
 
 		function Main() {
