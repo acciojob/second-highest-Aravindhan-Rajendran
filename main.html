@@ -8,32 +8,33 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			// If array length is less than 2, return undefined
-			if (arr.length < 2) {
-				return undefined;
-			}
+function secondHighest(arr) {
+    // If array length is less than 2, return undefined
+    if (arr.length < 2) {
+        return undefined;
+    }
 
-			var first = -Infinity;
-			var second = -Infinity;
+    // Check if all elements are the same
+    var allSame = arr.every(val => val === arr[0]);
+    if (allSame) {
+        return arr[0]; // return the element itself
+    }
 
-			for (var i = 0; i < arr.length; i++) {
-				if (arr[i] > first) {
-					second = first;
-					first = arr[i];
-				}
-				else if (arr[i] > second) {
-					second = arr[i];
-				}
-			}
+    var first = -Infinity;
+    var second = -Infinity;
 
-			// If second is still -Infinity, that means all elements were the same, so return undefined
-			if (second === -Infinity) {
-				return undefined;
-			}
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i] > second) {
+            second = arr[i];
+        }
+    }
 
-			return second;
-		}
+    return second;
+}
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
